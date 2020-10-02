@@ -9,9 +9,9 @@
 
 {% block header %}
 {{ govukHeader({
-  homepageUrl: "#",
+  homepageUrl: "/index",
   serviceName: "Foster parent diary log",
-  serviceUrl: "#",
+  serviceUrl: "/version_2/dashboard",
   navigation: [
     {
       href: "#1",
@@ -113,9 +113,13 @@
             </fieldset>
           </div>
 
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
+          <button class="govuk-button govuk-!-margin-right-1" data-module="govuk-button">
+              Save and continue
+            </button>
+
+            <a href="/version_2/dashboard.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Save as draft
+            </a>
         </form>
       </div>
     </div>
