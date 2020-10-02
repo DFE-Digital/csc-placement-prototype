@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block pageTitle %}
+  Review your diary entry
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "physical_health"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+
+        <h1 class="govuk-heading-l">Review your diary entry</h1>
+          
+        <p>Here you can check your answers before you send them to us.</p>  
+
+        <h2 class="govuk-heading-m">Foster parent daily diary</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you want to do?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Create a new diary entry for one of your children 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="start.html">
+                Change<span class="govuk-visually-hidden"> new entry</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Which child is this about 
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['child-letter'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="child_letter.html">
+                Change<span class="govuk-visually-hidden"> child letter</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Select the events you want to write about
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['event'] }}<br>{{ data['event-2'] }}<br>{{ data['event-3'] }}<br>{{ data['event-4'] }}<br>{{ data['event-5'] }}<br>{{ data['event-6'] }}<br>{{ data['event-7'] }}<br>{{ data['event-8'] }}<br>{{ data['event-9'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="diary_event.html">
+                Change<span class="govuk-visually-hidden"> events</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Physical health</h2>
+
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What do you want to write about
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['sort'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="physical_health.html">
+                Change<span class="govuk-visually-hidden"> type of entry</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Is this negative or positive?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['positive-negative'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="physical_health.html">
+                Change<span class="govuk-visually-hidden"> negative or positive</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Give details
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['give-detail'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="physical_health.html">
+                Change<span class="govuk-visually-hidden"> give details</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <h2 class="govuk-heading-m">Now send your diary entry</h2>
+
+        <p class="govuk-body">By submitting this information you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+        <form action="/version_1/confirmation" method="post" novalidate>
+
+          <input type="hidden" name="answers-checked" value="true">
+
+          <button class="govuk-button" data-module="govuk-button">
+            Accept and send
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  Select events to write about
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Foster parent diary log",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#1",
+      text: "Profile",
+      active: false
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "dashboard"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/version_2/physical_health" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Select the events you want to write about
+                </h1>
+              </legend>
+              <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event" name="event" type="checkbox" value="Home life" value="yes" {{ checked("event", "Home life") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event">
+                      Home life
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-2" name="event-2" type="checkbox" value="School life" value="yes" {{ checked("event-2", "School life") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-2">
+                      School life
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-3" name="event-3" type="checkbox" value="Sports, clubs and activities" value="yes" {{ checked("event-3", "Sports, clubs and activities") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-3">
+                      Sports, clubs and activities 
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-4" name="event-4" type="checkbox" value="Physical health" value="yes" {{ checked("event-4", "Physical health") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-4">
+                      Physical health 
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-5" name="event-5" type="checkbox" value="Emotional health and wellbeing" value="yes" {{ checked("event-5", "Emotional health and wellbeing") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-5">
+                      Emotional health and wellbeing
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-6" name="event-6" type="checkbox" value="Special educational needs" value="yes" {{ checked("event-6", "Special educational needs") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-6">
+                      Special educational needs
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-7" name="event-7" type="checkbox" value="Friends" value="yes" {{ checked("event-7", "Friends") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-7">
+                      Friends 
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-8" name="event-8" type="checkbox" value="Serious incidents" value="yes" {{ checked("event-8", "Serious incidents") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-8">
+                      Serious incidents
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="event-9" name="event-9" type="checkbox" value="Make a note about something else" value="yes" {{ checked("event-9", "Make a note about something else") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="event-9">
+                      Make a note about something else
+                    </label>
+                  </div>
+                </div>
+
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

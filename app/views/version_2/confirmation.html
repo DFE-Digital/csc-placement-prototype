@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block pageTitle %}
+  Review your diary entry
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Foster parent diary log",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#1",
+      text: "Profile",
+      active: false
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Thank you
+          </h1>
+          <div class="govuk-panel__body">
+            Today was a good day, Ella came back from school with an award for ... 
+          </div>
+        </div>
+
+        <p class="govuk-body">We have sent you a confirmation email.</p>
+
+        
+      </div>
+    </div>
+
+{% endblock %}

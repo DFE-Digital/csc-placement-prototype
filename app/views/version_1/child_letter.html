@@ -24,7 +24,7 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/diary_event" method="post" novalidate>
+        <form action="/version_1/diary_event" method="post" novalidate>
           <div class="govuk-form-group">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
@@ -34,7 +34,7 @@
               <div id="child-letter-hint" class="govuk-hint">
                 Please enter the child's letter
               </div>
-            <input class="govuk-input govuk-!-width-two-thirds" id="child-letter" name="child-letter" type="text">
+            <input class="govuk-input govuk-!-width-two-thirds" id="child-letter" name="child-letter" type="text" value="{{ data['child-letter'] }}">
           </div>
 
           <button class="govuk-button" data-module="govuk-button">

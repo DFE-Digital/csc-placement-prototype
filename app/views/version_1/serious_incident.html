@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block pageTitle %}
+  Review your diary entry
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "physical_health"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Serious incident</h1>
+
+        <form action="/check_answers" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="serious-incident-select">
+              What do you want to write about
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="missing">Gone missing</option>
+                <option value="violent">Violent behaviour</option>
+                <option value="sexual">Sexual behaviour</option>
+                <option value="drugs">Involved drugs</option>
+                <option value="alcohol">Incolved alcohol</option>
+                <option value="gang">Gang activity</option>
+                <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Was this by my child or towards my child?
+              </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="by-or-towards" name="by-or-towards" type="radio" value="by-child">
+                    <label class="govuk-label govuk-radios__label" for="by-or-towards">
+                      By my child
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="by-or-towards-2" name="by-or-towards" type="radio" value="towards-child">
+                    <label class="govuk-label govuk-radios__label" for="by-or-towards-2">
+                      Towards my child
+                    </label>
+                  </div>
+                </div>  
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Were the police involved?
+              </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="police-involved" name="police-involved" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="police-involved">
+                      Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="police-involved-2" name="police-involved" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="police-involved-2">
+                      No
+                    </label>
+                  </div>
+                </div>  
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="physical-health-text">
+                      Give details:
+                    </label>
+                    <textarea class="govuk-textarea" id="give-detail" name="give-detail" rows="5" aria-describedby="give-detail-hint"></textarea>
+                </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

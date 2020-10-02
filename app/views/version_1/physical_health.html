@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block pageTitle %}
+  Physical health
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "diary_event"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Physical health</h1>
+
+        <form action="/version_1/check_answers" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--m" for="physical-health-select">
+              What do you want to write about
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+                <option value="Accident" value="yes" {{ checked("sort", "Accident") }}>Accident</option>
+                <option value="Gp" value="yes" {{ checked("sort", "GP") }}>GP visit</option>
+                <option value="Hospital" value="yes" {{ checked("sort", "Hospital") }}>Hospital visit</option>
+                <option value="Dentist" value="yes" {{ checked("sort", "Dentist") }}>Dentist</option>
+                <option value="Optician" value="yes" {{ checked("sort", "Optician") }}>Optician</option>
+                <option value="Hearing" value="yes" {{ checked("sort", "Hearing") }}>Hearing appointment</option>
+                <option value="Other" value="yes" {{ checked("sort", "Other") }}>Other</option>
+            </select>
+          </div>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Is this negative or positive?
+              </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="positive-negative" name="positive-negative" type="radio" value="Positive" value="yes" {{ checked("positive-negative", "Positive") }}>
+                    <label class="govuk-label govuk-radios__label" for="positive-negative">
+                      Positive
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="positive-negative-2" name="positive-negative" type="radio" value="Negative" value="yes" {{ checked("positive-negative", "Negative") }}>
+                    <label class="govuk-label govuk-radios__label" for="positive-negative-2">
+                      Negative
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="positive-negative-3" name="positive-negative" type="radio" value="Neutral" value="yes" {{ checked("positive-negative", "Neutral") }}>
+                    <label class="govuk-label govuk-radios__label" for="positive-negative-3">
+                      Neutral
+                    </label>
+                  </div>
+                </div>
+              
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+                    <label class="govuk-label govuk-label--m" for="physical-health-text">
+                      Give details:
+                    </label>
+                    <textarea class="govuk-textarea" id="give-detail" name="give-detail" value="{{ data['give-detail'] }}" rows="5" aria-describedby="give-detail-hint"></textarea>
+                </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+{% endblock %}
