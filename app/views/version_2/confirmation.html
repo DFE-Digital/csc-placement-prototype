@@ -7,9 +7,9 @@
 
 {% block header %}
 {{ govukHeader({
-  homepageUrl: "#",
+  homepageUrl: "/index",
   serviceName: "Foster parent diary log",
-  serviceUrl: "#",
+  serviceUrl: "/version_2/dashboard",
   navigation: [
     {
       href: "#1",
@@ -42,13 +42,16 @@
             Thank you
           </h1>
           <div class="govuk-panel__body">
-            Today was a good day, Ella came back from school with an award for ... 
+            Your diary entry has been submitted successfully.
           </div>
         </div>
 
         <p class="govuk-body">We have sent you a confirmation email.</p>
 
-        
+        <a href="/version_2/dashboard.html" role="button" class="govuk-button govuk-button--secondary">
+          Create another diary entry
+        </a>
+          
       </div>
     </div>
 
