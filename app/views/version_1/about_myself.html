@@ -1,0 +1,343 @@
+{% extends "layout.html" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  About myself 
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+    {{ govukBackLink({
+      text: "Back",
+      href: "start"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+          
+          <h1 class="govuk-heading-l">About myself</h1>
+          
+        <form action="/version_1/physical_health" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <label class="govuk-label govuk-label--m" for="approved-type">
+              I am approved for:
+            </label>
+              </legend>
+              <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for" name="approved-for" type="checkbox" value="Long term fostering" value="yes" {{ checked("approved-for", "Long term fostering") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for">
+                      Long term fostering
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for-2" name="approved-for-2" type="checkbox" value="Short term fostering" value="yes" {{ checked("approved-for-2", "Short term fostering") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for-2">
+                      Short term fostering
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for-3" name="approved-for-3" type="checkbox" value="Kinship fostering" value="yes" {{ checked("approved-for-3", "Kinship fostering") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for-3">
+                      Kinship fostering
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for-4" name="approved-for-4" type="checkbox" value="Emergency fostering" value="yes" {{ checked("approved-for-4", "Emergency fostering") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for-4">
+                      Emergency fostering
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for-5" name="approved-for-5" type="checkbox" value="Respite and short breaks" value="yes" {{ checked("approved-for-5", "Respite and short breaks") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for-5">
+                      Respite and short breaks
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for-6" name="approved-for-6" type="checkbox" value="Remand fostering" value="yes" {{ checked("approved-for-6", "Remand fostering") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for-6">
+                      Remand fostering
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for-7" name="approved-for-7" type="checkbox" value="Fostering for adoption" value="yes" {{ checked("approved-for-7", "Fostering for adoption") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for-7">
+                      Fostering for adoption
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-for-8" name="approved-for-8" type="checkbox" value="Specialist therapeutic fostering" value="yes" {{ checked("approved-for-8", "Specialist therapeutic fostering") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-for-8">
+                      Specialist therapeutic fostering
+                    </label>
+                  </div>
+                </div>
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Bedroom 1:
+              </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="first-bedroom" name="first-bedroom" type="radio" value="Full" value="yes" {{ checked("first-bedroom", "Full") }}>
+                    <label class="govuk-label govuk-radios__label" for="first-bedroom">
+                      Full
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="first-bedroom-2" name="first-bedroom" type="radio" value="Available" value="yes" {{ checked("first-bedroom", "Available") }}>
+                    <label class="govuk-label govuk-radios__label" for="first-bedroom-2">
+                      Available
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="first-bedroom-3" name="first-bedroom" type="radio" value="Not applicable" value="yes" {{ checked("first-bedroom", "Not applicable") }}>
+                    <label class="govuk-label govuk-radios__label" for="first-bedroom-3">
+                      Not applicable
+                    </label>
+                  </div>
+                </div>
+              
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Bedroom 2:
+              </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="second-bedroom" name="second-bedroom" type="radio" value="Full" value="yes" {{ checked("second-bedroom", "Full") }}>
+                    <label class="govuk-label govuk-radios__label" for="second-bedroom">
+                      Full
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="second-bedroom-2" name="second-bedroom" type="radio" value="Available" value="yes" {{ checked("second-bedroom", "Available") }}>
+                    <label class="govuk-label govuk-radios__label" for="second-bedroom-2">
+                      Available
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="second-bedroom-3" name="second-bedroom" type="radio" value="Not applicable" value="yes" {{ checked("second-bedroom", "Not applicable") }}>
+                    <label class="govuk-label govuk-radios__label" for="second-bedroom-3">
+                      Not applicable
+                    </label>
+                  </div>
+                </div>
+              
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                Bedroom 3:
+              </legend>
+                <div class="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="third-bedroom" name="third-bedroom" type="radio" value="Full" value="yes" {{ checked("third-bedroom", "Full") }}>
+                    <label class="govuk-label govuk-radios__label" for="third-bedroom">
+                      Full
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="third-bedroom-2" name="third-bedroom" type="radio" value="Available" value="yes" {{ checked("third-bedroom", "Available") }}>
+                    <label class="govuk-label govuk-radios__label" for="third-bedroom-2">
+                      Available
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="third-bedroom-3" name="third-bedroom" type="radio" value="Not applicable" value="yes" {{ checked("third-bedroom", "Not applicable") }}>
+                    <label class="govuk-label govuk-radios__label" for="third-bedroom-3">
+                      Not applicable
+                    </label>
+                  </div>
+                </div>
+              
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <label class="govuk-label govuk-label--m" for="training-qualifications">
+              Training and qualifications:
+            </label>
+              </legend>
+              <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training" name="training" type="checkbox" value="Principles and values for fostering" value="yes" {{ checked("training", "Principles and values for fostering") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training">
+                      Principles and values for fostering
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training-2" name="training-2" type="checkbox" value="Foster carer role" value="yes" {{ checked("training-2", "Foster carer role") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training-2">
+                      Foster carer role
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training-3" name="training-3" type="checkbox" value="Health and safety" value="yes" {{ checked("training-3", "Health and safety") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training-3">
+                      Health and safety
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training-4" name="training-4" type="checkbox" value="Health care" value="yes" {{ checked("training-4", "Health care") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training-4">
+                      Health care
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training-5" name="training-5" type="checkbox" value="How to communicate effectively" value="yes" {{ checked("training-5", "How to communicate effectively") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training-5">
+                      How to communicate effectively
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training-6" name="training-6" type="checkbox" value="Understand child development " value="yes" {{ checked("training-6", "Understand child development ") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training-6">
+                      Understand child development 
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training-7" name="training-7" type="checkbox" value="Keeping children safe from harm" value="yes" {{ checked("training-7", "Keeping children safe from harm") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training-7">
+                      Keeping children safe from harm
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="training-8" name="training-8" type="checkbox" value="Develop yourself " value="yes" {{ checked("training-8", "Develop yourself ") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="training-8">
+                      Develop yourself 
+                    </label>
+                  </div>
+                </div>
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <label class="govuk-label govuk-label--m" for="approved-ages">
+              Approved for fostering:
+            </label>
+              </legend>
+              <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved" name="approved" type="checkbox" value="0-2 Year olds" value="yes" {{ checked("approved", "0-2 Year olds") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved">
+                      0-2 Year olds
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-2" name="approved-2" type="checkbox" value="3-4 Year olds" value="yes" {{ checked("approved-2", "3-4 Year olds") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-2">
+                      3-4 Year olds
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-3" name="approved-3" type="checkbox" value="5-10 Year olds" value="yes" {{ checked("approved-3", "5-10 Year olds") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-3">
+                      5-10 Year olds
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-4" name="approved-4" type="checkbox" value="11-15 Year olds" value="yes" {{ checked("approved-4", "11-15 Year olds") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-4">
+                    11-15 Year olds
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-5" name="approved-5" type="checkbox" value="16-17 Year olds" value="yes" {{ checked("approved-5", "16-17 Year olds") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-5">
+                      16-17 Year olds
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="approved-6" name="approved-6" type="checkbox" value="Special educational needs" value="yes" {{ checked("approved-6", "Special educational needs") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="approved-6">
+                      Special educational needs
+                    </label>
+                  </div>
+                </div>
+            </fieldset>
+          </div>
+            
+            <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <label class="govuk-label govuk-label--m" for="fostering-preference">
+              Preference for fostering:
+            </label>
+              </legend>
+              <div class="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="preference" name="preference" type="checkbox" value="Babies" value="yes" {{ checked("preference", "Babies") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="preference">
+                      Babies
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="preference-2" name="preference-2" type="checkbox" value="Pre-school" value="yes" {{ checked("preference-2", "Pre-school") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="preference-2">
+                      Pre-school
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="preference-3" name="preference-3" type="checkbox" value="Primary-school aged children" value="yes" {{ checked("preference-3", "Primary-school aged children") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="preference-3">
+                      Primary-school aged children
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="preference-4" name="preference-4" type="checkbox" value="Secondary-school aged children" value="yes" {{ checked("preference-4", "Secondary-school aged children") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="preference-4">
+                      Secondary-school aged children
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="preference-5" name="preference-5" type="checkbox" value="Older teenagers" value="yes" {{ checked("preference-5", "Older teenagers") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="preference-5">
+                      Older teenagers
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="preference-6" name="preference-6" type="checkbox" value="Special educational needs" value="yes" {{ checked("preference-6", "Special educational needs") }}>
+                    <label class="govuk-label govuk-checkboxes__label" for="preference-6">
+                      Special educational needs
+                    </label>
+                  </div>
+                </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+{% endblock %}

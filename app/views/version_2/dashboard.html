@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block pageTitle %}
+  Foster parent dashboard
+{% endblock %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Foster parent diary log",
+  serviceUrl: "#",
+  navigation: [
+    {
+      href: "#1",
+      text: "Profile",
+      active: false
+    },
+    {
+      href: "#2",
+      text: "Sign out"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "alpha"
+      },
+      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+    }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Diary Log Home</h1>
+          
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation" style="text-align:left; background-color: #f2f2f2;" >
+          <h2 class="govuk-heading-l" style="text-align: left;">
+            Ella
+          </h2>
+        <p class="govuk-body" style="text-align: left;">Today was a good day, Ella came back from school with an award for ... .</p>
+            
+            <div>
+            <a href="#" class="govuk-link" style="text-align: left;">View previous dairy entries</a>
+            <br>
+            <a href="/version_2/diary_event.html" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-4">
+  Make a new diary entry
+</a>
+                </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    </div>
+</div>
+{% endblock %}
